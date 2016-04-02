@@ -1,76 +1,89 @@
 <?php get_header(); ?>
 
-			<div id="content">
-
-				<div id="inner-content" class="wrap cf">
-
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline entry-meta vcard">
-                                                                        <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                       								/* the time the post was published */
-                       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__( 'by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content cf">
-									<?php the_content(); ?>
-								</section>
-
-								<footer class="article-footer cf">
-									<p class="footer-comment-count">
-										<?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
-									</p>
-
-
-                 	<?php printf( '<p class="footer-category">' . __('filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-
-                  <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-
-								</footer>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-
-						</main>
-
-					<?php get_sidebar(); ?>
-
+				<div id="inner-content" class=" cf">
+						<div class="d-1of3 t-1of3 m-all midbar-ctn midbar-ctn-1" >
+							<div class="midbar-shade">
+								<h2 class="home-mid-h2">Enrol With Us</h2>
+								<span class="midbar-span"></span>
+							</div>
+							
+							
+						</div>
+						
+						<div class="d-1of3 t-1of3 m-all midbar-ctn midbar-ctn-2" >
+							<div class="midbar-shade">
+								<h2 class="home-mid-h2">Order a Prescription</h2>
+								<span class="midbar-span"></span>
+							</div>
+						</div>
+						
+						<div class="d-1of3 t-1of3 m-all midbar-ctn midbar-ctn-3" >
+							<div class="midbar-shade">
+								<h2 class="home-mid-h2">Manage my Health Login</h2>
+								<span class="midbar-span"></span>
+							</div>
+							
+						</div>
 				</div>
+			
+		<div id="content" class="wrap">
 
-			</div>
+			
+				
+					<h1 class="text-center">Welcome to Our Practice</h1>
+					
+					<p>We provide comprehensive medical care including after hours cover. During the week we operate an appointment system will <u>always</u> accomodate emergencies.</p>
+					
+					<p>We are an accredited teaching practice and so we frequently also have doctors undergoin further training and medical students in the practice</p>
+	
+				
+					<h2>We offer a full rang of Medical Care &amp; Services include:</h2>
+					
+					<ul class="t-1of2 d-1of2">
+					<li>General Family Medicine</li>
+					<li>Minor Surgery</li>
+					<li>Drivers edicals</li>
+					<li>Cervical screening</li>
+					<li>Child Health care</li>
+					<li>Travel Advice</li>
+					<li>Counselling</li>
+					<li>Smoking Cerssation Clinic</li>
+					</ul>
 
+					<ul class="t-1of2 d-1of2">
+						<li>Accident &amp; Emergency</li>
+						<li>Preventative Health care</li>
+						<li>Immunisations</li>
+						<li>Medical Nursing Care</li>
+						<li>Work Injuries</li>
+						<li>Diabetes linics</li>
+						<li>Nurse clinics</li>
+						<li>B4 School Checks</li>
+					</ul>
+				
+					<h2>In our Medical Center we also have other health professionals:</h2>
+	
+					<ul class="t-1of2 d-1of2">
+						<li>Dentist</li>
+						<li>Physiotherapists</li>
+						<li>Pharmacy</li>
+						<li>Addiction Services</li>
+						<li>Orthopeadic Surgeon</li>
+						<li>Podiatrst</li>
+						<li>General Surgeon</li>
+					</ul>
 
+					<ul class="t-1of2 d-1of2">
+						<li>Hamiltion Path Lab</li>
+						<li>Community Health Nurses</li>
+						<li>Community Mental Health team</li>
+						<li>Hearing therapist</li>
+						<li>Mole map</li>
+						<li>Ear Health Nurse</li>
+					</ul>
+
+<div class="cf"></div>
+			
+
+	</div>
 <?php get_footer(); ?>

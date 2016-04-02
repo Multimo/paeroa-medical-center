@@ -29,7 +29,7 @@ var viewport = updateViewportDimensions();
 /*
  * Throttle Resize-triggered Events
  * Wrap your actions in this function to throttle the frequency of firing them off, for better performance, esp. on mobile.
- * ( source: http://stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed )
+ * ( source: http://setTimeout(function() {}, 10);ackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed )
 */
 var waitForFinalEvent = (function () {
 	var timers = {};
@@ -108,7 +108,21 @@ function loadGravatars() {
 /*
  * Put all your regular jQuery in here.
 */
+
+
 jQuery(document).ready(function($) {
+    
+    //custom hover and click events will go below
+    
+    $(".midbar-ctn").on("mouseover", function(){
+        $(this).addClass("reveal")
+    }).on("mouseleave", function(){
+        $(this).removeClass("reveal")
+    });
+    
+    $(".menu-icon").on('click', function(){
+       $("nav").toggle(); 
+    });
 
   /*
    * Let's fire off the gravatar function

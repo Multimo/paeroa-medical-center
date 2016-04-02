@@ -20,11 +20,89 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $background-white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
+.midbar-ctn button {
+	margin: 20px auto;
+    display: block;
+    background: #323944;
+    border: none;
+    padding: 10px 35px;
+    color: #fff;
+}
+.midbar-ctn img {
+	max-width: 100%;
+	width: 100%;
+}
+@mixin midbar-ctn {
+	height: 160px;
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	border-right: 2px solid white;
+	border-left: 2px solid white;
+	border-bottom: 2px solid white;
+	padding: 0;
+}
+.home-mid-h2 {
+	text-align: center;
+	padding-top: 10%;
+	margin: 0;
+	color: white;
+	transition: all .7s;
+	transform: scale(1);
+	font-size: 2em;
+}
+.midbar-ctn-1 {
+	@include midbar-ctn;
+	background-image: url(http://lorempixel.com/400/400/);
+	background-size: cover; 
+}
+.midbar-ctn-2 {
+	@include midbar-ctn;
+	background-image: url(http://lorempixel.com/400/400/);
+	background-size: cover; 
+}
+.midbar-ctn-3 {
+	@include midbar-ctn;
+	background-image: url(http://lorempixel.com/400/400/);
+	background-size: cover; 
+}
 
+.midbar-shade {
+	background: rgba(35, 40, 45, 0.46);
+	width: 100%;
+	height: 100%;
+	transition: all .7s;
+	opacity: 1;
+}
+.midbar-span {
+	width: 40%;
+	border: 1px solid white;
+	margin: 25px auto;
+	display: block;
+	transform: translateY(45px);
+	transition: all .7s;
+	opacity: 0;
+}
+
+// animation styles below
+.reveal div .midbar-span {
+	transform: translateY(0px);
+	opacity: 1;
+}
+.reveal div  {
+	opacity: .7;
+}
+.reveal div .home-mid-h2 {
+	transform: scale(1.15);
+}
+
+.text-center {
+	text-align: center;
+}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -110,6 +188,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
+	font-family: 'Raleway', sans-serif;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -133,11 +212,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 1.4em;
 }
 
 h4, .h4 {
-	font-size: 1.1em;
+	font-size: 1.25em;
 	font-weight: 700;
 }
 
@@ -154,15 +233,28 @@ HEADER STYLES
 
 .header {
 	background-color: $black;
+	
 }
 
 	#logo {
 		margin: 0.75em 0;
+		font-size: 2.6em;
 
 		a {
 			color: $white;
+			font-family: 'Raleway', sans-serif;
 		}
 	}
+	
+	#inner-header h2 {
+		
+	}
+	
+.header-after-bg {
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(to right, #fff 0, #ABDCFE 33%, #EAEF54 66%, #D4323B 100%);
+}
 
 /*********************
 NAVIGATION STYLES
@@ -175,11 +267,16 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+nav {
+	display: none;
+	transition: all .5s;
+}
 
 .nav {
+	
 	border-bottom: 0;
 	margin: 0;
-
+	
 	li {
 
 		a {
@@ -187,6 +284,8 @@ and more scalable.
 			color: $white;
 			text-decoration: none;
 			padding: 0.75em;
+			font-size: 1.2em;
+			
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -195,7 +294,7 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
-
+				text-decoration: none;
 			}
 		}
 
@@ -244,7 +343,30 @@ and more scalable.
 
 	}  /* end current highlighters */
 
-} /* end .nav */
+}
+
+.menu-icon {
+	display: block;
+	position: relative;
+	font-size: 1.5em;
+	background: rgba(212, 50, 59, 0.68);
+
+   h3 {
+   	color: white;
+   	padding: 5px;
+   	margin: 15px 0;
+   	font-size: inherit;
+   }
+   
+   i {
+   	position: absolute;
+   	right: 10px;
+   	top: 10px;
+   	color: white;
+   }
+
+}
+/* end .nav */
 
 
 /*********************
@@ -252,23 +374,26 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+	margin: 2em auto;
+	display: block;
+	position: relative;
+ 
 }
 
 		.hentry {
-			background-color: $white;
+
 			border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
+		
 
 			header {
-				border-bottom: 1px solid $light-gray;
+			
 				padding: 1.5em;
 			}
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
+				
 
 				p {
 					margin: 0;
@@ -887,3 +1012,22 @@ FOOTER STYLES
 
 
 	.copyright {}
+
+.footer-p {
+	font-size: 1.25em;
+}
+
+#map {
+	height: 300px;
+	width: 100%;
+	float: right;
+}
+#inner-footer {
+	padding: 10px;
+}
+
+.footer-after-bg {
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(to left, #fff 0, #ABDCFE 33%, #EAEF54 66%, #D4323B 100%);
+}

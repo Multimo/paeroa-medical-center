@@ -19,6 +19,40 @@ GENERAL STYLES
 
 body {}
 
+.midbar-ctn {
+	height: 300px;
+	width: 100%;
+	max-width: 33.33%;
+	margin: 0;
+	border-right: 2px solid white;
+	border-left: 2px solid white;
+	padding: 0;
+}
+.home-mid-h2 {
+	text-align: center;
+	padding-top: 20%;
+	margin: 0;
+	color: white;
+	transition: all .7s;
+	transform: scale(1);
+	font-size: 2em;
+}
+.midbar-ctn-1 {
+
+	background-image: url(http://lorempixel.com/400/400/);
+	background-size: cover; 
+}
+.midbar-ctn-2 {
+
+	background-image: url(http://lorempixel.com/400/400/);
+	background-size: cover; 
+}
+.midbar-ctn-3 {
+
+	background-image: url(http://lorempixel.com/400/400/);
+	background-size: cover; 
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -31,14 +65,23 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	background-image: url(../images/bg.jpg);
+	min-height: 500px;
+    background-size: cover;
+}
 
-	#logo {}
+	#logo {
+		font-size: 3.5em;
+	}
 
 /*********************
 NAVIGATION STYLES
 *********************/
-
+nav {
+	display: block;
+	
+}
 .nav {
 	border: 0;
 	ul {
@@ -58,7 +101,7 @@ NAVIGATION STYLES
 			*/
 			&:hover, &:focus {
 				color: $white;
-				text-decoration: underline;
+				
 			}
 		}
 
@@ -135,7 +178,12 @@ NAVIGATION STYLES
 		a {}
 	}  /* end current highlighters */
 
-} /* end .nav */
+}
+
+.menu-icon  {
+	display: none;
+}
+/* end .nav */
 
 /*********************
 SIDEBARS & ASIDES
